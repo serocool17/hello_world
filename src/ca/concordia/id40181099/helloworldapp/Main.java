@@ -1,9 +1,10 @@
 
 package ca.concordia.id40181099.helloworldapp;
-import java.time.LocalDate;
+
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class Main {
 
@@ -26,7 +27,16 @@ public class Main {
         int age = 25;
         int Account = 1457;
         int payment = 2000;
+        //Arithmetic Expressions
         int total = (Account - payment);
+
+        //formatting numbers
+        NumberFormat accountFormatted = NumberFormat.getCurrencyInstance();
+        NumberFormat paymentFormatted = NumberFormat.getCurrencyInstance();
+        NumberFormat totalFormatted = NumberFormat.getCurrencyInstance();
+        String accountresult = accountFormatted.format(Account);
+        String paymentresult = paymentFormatted.format(payment);
+        String totalresult = totalFormatted.format(total);
 
         //Local date and time with format
 
@@ -34,13 +44,24 @@ public class Main {
         DateTimeFormatter date1 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = date.format(date1);
 
+        //trying arrays class
+
+        int[] numbers = {3 ,2 ,1};
+        Arrays.sort(numbers);
+        String result = Arrays.toString(numbers);
 
         //Elements to be print
 
         System.out.println(Bank);
         System.out.println(transactionDate + " " + formattedDate);
         System.out.println(welcome + " " + First + " " + Last + " " + Balance);
-        System.out.println(Account + " " + "$" + payment + " " + "$"+ total);
+        System.out.println(accountresult + " " + paymentresult + " " + totalresult);
+        System.out.println(result);
+
+
+
+
+
 
 
 
